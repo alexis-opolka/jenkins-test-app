@@ -14,11 +14,11 @@ RUN pip install flask
 COPY  ./static /home/myapp/static/
 COPY  ./templates /home/myapp/templates/
 COPY  sample_app.py /home/myapp/
-EXPOSE 8000
+EXPOSE 5050
 CMD python /home/myapp/sample_app.py
 EOF
 
 cd tempdir
 docker build -t sampleapp .
-docker run -t -d -p 8000:8000 --name samplerunning sampleapp
+docker run -t -d -p 5050:5050 --name samplerunning sampleapp
 docker ps -a 
