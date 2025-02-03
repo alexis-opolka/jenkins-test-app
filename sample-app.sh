@@ -19,6 +19,6 @@ CMD python /home/myapp/sample_app.py
 EOF
 
 cd tempdir
-docker build -t sampleapp .
-docker run -t -d -p 5050:5050 --name samplerunning sampleapp
+docker build -t jenkins-sample:latest .
+docker run -t -d -p 5050:5050 --name $1 jenkins-sample:latest
 docker ps -a 
